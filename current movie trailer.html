@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Trailers</title>
+  <style>
+    body {
+      background-color: #202020;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #ff9800;
+      margin-bottom: 20px;
+    }
+    .search-box {
+      padding: 10px 15px;
+      width: 60%;
+      max-width: 500px;
+      font-size: 16px;
+      border: none;
+      border-radius: 25px;
+      outline: none;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      margin-bottom: 40px;
+    }
+    .movie-block {
+      margin-bottom: 60px;
+    }
+    .movie-title {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: #e91e63;
+    }
+    .description {
+      font-size: 1.1em;
+      margin-top: 10px;
+    }
+    iframe {
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>🎬 Movie Trailers</h1>
+  <input type="text" class="search-box" id="searchInput" placeholder="Search movie titles..." onkeyup="filterMovies()" />
+
+  <!-- Movies -->
+  <div id="movieContainer">
+
+    <div class="movie-block">
+      <div class="movie-title">Mahavatar Narsimha</div>
+      <iframe width="750" height="420" src="https://www.youtube.com/embed/p7eE_dn9u4k" frameborder="0" allowfullscreen></iframe>
+      <div class="description">A powerful spiritual trailer — watch glimpses of Mahavatar Narsimha.</div>
+    </div>
+
+    <div class="movie-block">
+      <div class="movie-title">Saiyaara</div>
+      <iframe width="750" height="420" src="https://www.youtube.com/embed/9r-tT5IN0vg" frameborder="0" allowfullscreen></iframe>
+      <div class="description">A trailer filled with romance, emotions, and music — presenting Saiyaara.</div>
+    </div>
+
+    <div class="movie-block">
+      <div class="movie-title">Son of Sardar 2</div>
+      <iframe width="750" height="420" src="https://www.youtube.com/embed/HSX_KPfbP1o" frameborder="0" allowfullscreen></iframe>
+      <div class="description">Action! Emotions! Confusion ka bhandaar. JASSI is back, aur iss baar sab kuch double hai!</div>
+    </div>
+
+    <div class="movie-block">
+      <div class="movie-title">Ajey</div>
+      <iframe width="750" height="420" src="https://www.youtube.com/embed/9bPTjg-8alY?si=zED648uhLST-6uW" frameborder="0" allowfullscreen></iframe>
+      <div class="description">Ajey - The Untold Story Of A Yogi | Teaser | Anant J | Paresh R | Nirahua | Ajay Mengi</div>
+    </div>
+
+    <div class="movie-block">
+      <div class="movie-title">Dhadak 2</div>
+      <iframe width="750" height="420" src="https://youtube.com/embed/GRq6nXiJdug?si=hIi4PZdTBovyqZn3" frameborder="0" allowfullscreen></iframe>
+      <div class="description">DHADAK 2 - OFFICIAL TRAILER | Siddhant Chaturvedi | Triptii Dimri | Shazia Iqbal  </div>
+    </div>
+
+    <div class="movie-block">
+      <div class="movie-title">Sitaare Zameen Par</div>
+      <iframe width="750" height="420" src="https://WWW.youtube.com/embed/YH6k5weqwy8?si=KT4KCS2wW5_3B5T7" frameborder="0" allowfullscreen></iframe>
+      <div class="description">Sitaare Zameen Par | Official Trailer | Aamir Khan | Genelia Deshmukh</div>
+    </div>
+
+    <div class="movie-block">
+      <div class="movie-title">WAR 2</div>
+      <iframe width="750" height="420" src="https://WWW.youtube.com/embed/mjBym9uKth4?si=ybCQ5ohigVMa8NWZ" frameborder="0" allowfullscreen></iframe>
+      <div class="description">WAR 2 | Official Trailer | Hrithik Roshan | NTR | Kiara Advani | Ayan Mukerji | YRF Spy Universe</div>
+    </div>
+
+  </div>
+
+  <script>
+    function filterMovies() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const movieBlocks = document.querySelectorAll('.movie-block');
+
+      movieBlocks.forEach(block => {
+        const title = block.querySelector('.movie-title').innerText.toLowerCase();
+        if (title.includes(input)) {
+          block.style.display = '';
+        } else {
+          block.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
