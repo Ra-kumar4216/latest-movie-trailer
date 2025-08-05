@@ -15,7 +15,7 @@
       color: #ff9800;
       margin-bottom: 20px;
     }
-    .search-box {
+    .search-box, .language-select {
       padding: 10px 15px;
       width: 60%;
       max-width: 500px;
@@ -24,85 +24,140 @@
       border-radius: 25px;
       outline: none;
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-      margin-bottom: 40px;
+      margin-bottom: 5px;
     }
-    .movie-block {
-      margin-bottom: 60px;
+    .movie-block:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px rgba(255,255,255,0.3);
     }
     .movie-title {
       font-size: 1.5em;
+      font-weight: bold;
       margin-bottom: 10px;
       color: #e91e63;
     }
     .description {
-      font-size: 1.1em;
+      font-size: 1em;
+      color: #ccc;
       margin-top: 10px;
     }
     iframe {
+      width: 100%;
+      height: 250px;
       border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
+    @media (max-width: 600px) {
+      iframe {
+        height: 180px;
+      }
+      .movie-title {
+        font-size: 1.2em;
+      }
     }
   </style>
 </head>
 <body>
   <h1>🎬 Movie Trailers</h1>
+
   <input type="text" class="search-box" id="searchInput" placeholder="Search movie titles..." onkeyup="filterMovies()" />
+  <br>
+  <select class="language-select" id="languageFilter" onchange="filterMovies()">
+    <option value="all">All Languages</option>
+    <option value="hindi">Hindi</option>
+    <option value="english">English</option>
+    <option value="tamil">Tamil</option>
+    <option value="bangali">Bangali</option>
+    <option value="Telugu">Telugu</option>
+    <option value="Gujrati">Gugrati</option>
+    <option value="Marathi">Marathi</option>
+  </select>
 
   <!-- Movies -->
   <div id="movieContainer">
 
-    <div class="movie-block">
+    <div class="movie-block" data-language="hindi">
       <div class="movie-title">Mahavatar Narsimha</div>
-      <iframe width="750" height="420" src="https://www.youtube.com/embed/p7eE_dn9u4k" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/p7eE_dn9u4k" frameborder="0" allowfullscreen></iframe>
       <div class="description">A powerful spiritual trailer — watch glimpses of Mahavatar Narsimha.</div>
     </div>
 
-    <div class="movie-block">
+    <div class="movie-block" data-language="hindi">
       <div class="movie-title">Saiyaara</div>
-      <iframe width="750" height="420" src="https://www.youtube.com/embed/9r-tT5IN0vg" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/9r-tT5IN0vg" frameborder="0" allowfullscreen></iframe>
       <div class="description">A trailer filled with romance, emotions, and music — presenting Saiyaara.</div>
     </div>
 
-    <div class="movie-block">
+    <div class="movie-block" data-language="hindi">
       <div class="movie-title">Son of Sardar 2</div>
-      <iframe width="750" height="420" src="https://www.youtube.com/embed/HSX_KPfbP1o" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/HSX_KPfbP1o" frameborder="0" allowfullscreen></iframe>
       <div class="description">Action! Emotions! Confusion ka bhandaar. JASSI is back, aur iss baar sab kuch double hai!</div>
     </div>
 
-    <div class="movie-block">
+    <div class="movie-block" data-language="hindi">
       <div class="movie-title">Ajey</div>
-      <iframe width="750" height="420" src="https://www.youtube.com/embed/9bPTjg-8alY?si=zED648uhLST-6uW" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/9bPTjg-8alY?si=zED648uhLST-6uW" frameborder="0" allowfullscreen></iframe>
       <div class="description">Ajey - The Untold Story Of A Yogi | Teaser | Anant J | Paresh R | Nirahua | Ajay Mengi</div>
     </div>
 
-    <div class="movie-block">
+    <div class="movie-block" data-language="hindi">
       <div class="movie-title">Dhadak 2</div>
-      <iframe width="750" height="420" src="https://youtube.com/embed/GRq6nXiJdug?si=hIi4PZdTBovyqZn3" frameborder="0" allowfullscreen></iframe>
-      <div class="description">DHADAK 2 - OFFICIAL TRAILER | Siddhant Chaturvedi | Triptii Dimri | Shazia Iqbal  </div>
+      <iframe src="https://youtube.com/embed/GRq6nXiJdug?si=hIi4PZdTBovyqZn3" frameborder="0" allowfullscreen></iframe>
+      <div class="description">DHADAK 2 - OFFICIAL TRAILER | Siddhant Chaturvedi | Triptii Dimri | Shazia Iqbal</div>
     </div>
 
-    <div class="movie-block">
+    <div class="movie-block" data-language="hindi">
       <div class="movie-title">Sitaare Zameen Par</div>
-      <iframe width="750" height="420" src="https://WWW.youtube.com/embed/YH6k5weqwy8?si=KT4KCS2wW5_3B5T7" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/YH6k5weqwy8?si=KT4KCS2wW5_3B5T7" frameborder="0" allowfullscreen></iframe>
       <div class="description">Sitaare Zameen Par | Official Trailer | Aamir Khan | Genelia Deshmukh</div>
     </div>
 
-    <div class="movie-block">
+    <div class="movie-block" data-language="hindi">
       <div class="movie-title">WAR 2</div>
-      <iframe width="750" height="420" src="https://WWW.youtube.com/embed/mjBym9uKth4?si=ybCQ5ohigVMa8NWZ" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/mjBym9uKth4?si=ybCQ5ohigVMa8NWZ" frameborder="0" allowfullscreen></iframe>
       <div class="description">WAR 2 | Official Trailer | Hrithik Roshan | NTR | Kiara Advani | Ayan Mukerji | YRF Spy Universe</div>
+    </div>
+
+    <div class="movie-block" data-language="hindi">
+      <div class="movie-title">Baaghi 4</div>
+      <iframe src="https://www.youtube.com/embed/ijD12fHkYhU?si=myIMfvWaVHUTl6jI" frameborder="0" allowfullscreen></iframe>
+      <div class="description">Baaghi 4 | Concept Trailer | Tiger Shroff | Sanjay Dutt | Sonam Bajwa | Sajid Nadiadwala | Ahmed Khan</div>
+    </div>
+
+    <div class="movie-block" data-language="tamil">
+      <div class="movie-title">Indian 2</div>
+      <iframe src="https://www.youtube.com/embed/3bvBUT5pQYY?si=fO79ePWxxH7cYjcb" frameborder="0" allowfullscreen></iframe>
+      <div class="description">Indian 2 Trailer | Kamal Haasan | Shankar | Anirudh | Subaskaran | Lyca Productions | Red Giant</div>
+    </div>
+
+    <div class="movie-block" data-language="Tamil">
+      <div class="movie-title">Raayan</div>
+      <iframe src="https://www.youtube.com/embed/qQJJWhh-XRo?si=FkgEHozwArhftsGO" frameborder="0" allowfullscreen></iframe>
+      <div class="description">RAAYAN - Official Trailer | Dhanush | Sun Pictures | A.R. Rahman</div>
+    </div>
+
+    <div class="movie-block" data-language="tamil">
+      <div class="movie-title">Thandel</div>
+      <iframe src="https://www.youtube.com/embed/htCVXc7hvx0?si=sp0t_XmTomqjiXsF" frameborder="0" allowfullscreen></iframe>
+      <div class="description">Thandel - Official Trailer (Tamil) | Naga Chaitanya, Sai Pallavi | Chandoo Mondeti | Devi Sri Prasad</div>
     </div>
 
   </div>
 
   <script>
     function filterMovies() {
-      const input = document.getElementById('searchInput').value.toLowerCase();
+      const searchValue = document.getElementById('searchInput').value.toLowerCase();
+      const languageValue = document.getElementById('languageFilter').value.toLowerCase();
       const movieBlocks = document.querySelectorAll('.movie-block');
 
       movieBlocks.forEach(block => {
         const title = block.querySelector('.movie-title').innerText.toLowerCase();
-        if (title.includes(input)) {
+        const language = block.getAttribute('data-language').toLowerCase();
+
+        const matchesSearch = title.includes(searchValue);
+        const matchesLanguage = (languageValue === 'all' || language === languageValue);
+
+        if (matchesSearch && matchesLanguage) {
           block.style.display = '';
         } else {
           block.style.display = 'none';
